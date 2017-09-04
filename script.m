@@ -15,11 +15,14 @@ hlinf = sqrt(((vanish_p(1,1) - pointP2(1,1)).^2) + ((vanish_p(1,2) - pointP2(1,2
 
 htrue = sqrt(((footP1(1,1) - headP1(1,1)).^2) + ((footP1(1,2) - headP1(1,2)).^2));
 htrue2 = sqrt(((footP2(1,1) - headP2(1,1)).^2) + ((footP2(1,2) - headP2(1,2)).^2));
-
-altura = 1.86;
+    
+altura = 1.75;
 
 HR = (altura*hr)/htrue;
 
 H = HR*(hl*hinf)/(hr*hlinf);
 
 altura2 = H*htrue2/(hl);
+
+ims = insertText(im, headP2-40, ['Altura: ' num2str(altura2)], 'FontSize', 18);
+imshow(ims);
